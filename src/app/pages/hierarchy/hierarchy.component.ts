@@ -21,6 +21,12 @@ export class HierarchyComponent implements OnInit {
 
   myDownline = [
     {
+      upline : null,
+      name : "Me",
+      position : "CEO",
+      level   : 0
+    },
+    {
       upline : "Me",
       name : "John",
       position : "Project Manager",
