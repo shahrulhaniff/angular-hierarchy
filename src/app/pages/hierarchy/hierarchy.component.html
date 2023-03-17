@@ -1,1 +1,29 @@
-<p>hierarchy works!</p>
+<!-- <div class="container">
+  <ng-container *ngFor="let employee of employees">
+    <div class="employee" [ngClass]="'level-' + employee.level">
+      <div class="info">
+        <img src="https://via.placeholder.com/50" alt="{{employee.name}}">
+        <div class="name">{{employee.name}}</div>
+        <div class="position">{{employee.position}}</div>
+      </div>
+      <div class="connector"></div>
+    </div>
+  </ng-container>
+</div> -->
+
+<div class="hierarchy-chart">
+  <ul class="hierarchy-chart__list">
+    <ng-container *ngFor="let member of myDownline; let i = index">
+      <li class="hierarchy-chart__item" [class.hierarchy-chart__item--first-level]="member.level === 1">
+        <div class="hierarchy-chart__item-content">
+          <img src="https://picsum.photos/id/{{i+1}}/100/100" alt="Avatar" class="hierarchy-chart__item-avatar">
+          <div class="hierarchy-chart__item-details">
+            <h4 class="hierarchy-chart__item-name">{{member.name}}</h4>
+            <p class="hierarchy-chart__item-position">{{member.position}}</p>
+          </div>
+        </div>
+        <div class="hierarchy-chart__item-connector"></div>
+      </li>
+    </ng-container>
+  </ul>
+</div>
