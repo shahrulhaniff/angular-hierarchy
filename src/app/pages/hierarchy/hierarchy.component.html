@@ -1,16 +1,1 @@
-<div class="container">
-  <ng-container *ngFor="let member of myDownline">
-    <div class="node-container" [ngClass]="{ 'node-top': member.level === 1 }">
-      <div class="node">
-        <div class="node-img">
-          <img src="https://via.placeholder.com/150x150.png?text={{ member.name }}" alt="{{ member.name }} image">
-        </div>
-        <div class="node-text">
-          <h4>{{ member.name }}</h4>
-          <p>{{ member.position }}</p>
-        </div>
-      </div>
-      <div class="line" *ngIf="member.upline && member.level !== 1"></div>
-    </div>
-  </ng-container>
-</div>
+test use npm library
