@@ -1,29 +1,16 @@
-<!-- <div class="container">
-  <ng-container *ngFor="let employee of employees">
-    <div class="employee" [ngClass]="'level-' + employee.level">
-      <div class="info">
-        <img src="https://via.placeholder.com/50" alt="{{employee.name}}">
-        <div class="name">{{employee.name}}</div>
-        <div class="position">{{employee.position}}</div>
+<div class="container">
+  <ng-container *ngFor="let member of myDownline">
+    <div class="node-container" [ngClass]="{ 'node-top': member.level === 1 }">
+      <div class="node">
+        <div class="node-img">
+          <img src="https://via.placeholder.com/150x150.png?text={{ member.name }}" alt="{{ member.name }} image">
+        </div>
+        <div class="node-text">
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.position }}</p>
+        </div>
       </div>
-      <div class="connector"></div>
+      <div class="line" *ngIf="member.upline && member.level !== 1"></div>
     </div>
   </ng-container>
-</div> -->
-
-<div class="hierarchy-chart">
-  <ul class="hierarchy-chart__list">
-    <ng-container *ngFor="let member of myDownline; let i = index">
-      <li class="hierarchy-chart__item" [class.hierarchy-chart__item--first-level]="member.level === 1">
-        <div class="hierarchy-chart__item-content">
-          <img src="https://picsum.photos/id/{{i+1}}/100/100" alt="Avatar" class="hierarchy-chart__item-avatar">
-          <div class="hierarchy-chart__item-details">
-            <h4 class="hierarchy-chart__item-name">{{member.name}}</h4>
-            <p class="hierarchy-chart__item-position">{{member.position}}</p>
-          </div>
-        </div>
-        <div class="hierarchy-chart__item-connector"></div>
-      </li>
-    </ng-container>
-  </ul>
 </div>
