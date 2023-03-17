@@ -2,6 +2,7 @@ import { HierarchyRoutingModule } from './hierarchy-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HierarchyComponent } from './hierarchy.component';
+import { NgxOrgChartModule } from 'ngx-org-chart';
 
 
 
@@ -11,7 +12,8 @@ import { HierarchyComponent } from './hierarchy.component';
   ],
   imports: [
     CommonModule,
-    HierarchyRoutingModule
+    HierarchyRoutingModule,
+    NgxOrgChartModule
   ]
 })
 export class HierarchyModule { }
